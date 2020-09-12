@@ -126,18 +126,27 @@ tmp.trigger = Transition.EndNavigation;
 if ( pres_ar )
 	tmp.preserve_aspect_ratio = true;
 
+//
+// HIGHLIGHTED BACKGROUND MUSIC IS PLAYED THROUGH THIS 0x0 ELEMENT
+//
+local mus = FadeArt( "music", 0, 0, 0, 0 );
+mus.trigger = Transition.EndNavigation;
+
 fe.add_image( "field.png", 0, 0, 456, 336 );
 local main_caption = fe.add_text( "[DisplayName]", 118, 316, 220, 14 );
 
 fe.overlay.set_custom_controls( main_caption, lb );
 
-local l = fe.add_text( "[ListEntry]/[ListSize]", 0, 322, 60, 10 );
-l.align = Align.Left;
-l.set_rgb( 80, 80, 80 );
-
-l = fe.add_text( "[FilterName]", 396, 322, 60, 10 );
-l.align = Align.Right;
-l.set_rgb( 80, 80, 80 );
+//
+// LIST AND FILTER COUNT COMMENTED OUT
+//
+// local l = fe.add_text( "[ListEntry]/[ListSize]", 0, 322, 60, 10 );
+// l.align = Align.Left;
+// l.set_rgb( 80, 80, 80 );
+// l = fe.add_text( "[FilterName]", 396, 322, 60, 10 );
+// l.align = Align.Right;
+// l.set_rgb( 80, 80, 80 );
+//
 
 //
 // Update the listbox display to show the sort critera if we are showing
